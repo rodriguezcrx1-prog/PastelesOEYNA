@@ -1,0 +1,138 @@
+:root {
+    --rosa-fondo: #f9d8d8;
+    --dorado: #f1c40f;
+    --texto: #5d4037;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+body {
+    background-color: var(--rosa-fondo);
+    color: var(--texto);
+    overflow-x: hidden;
+}
+
+/* Navbar flotante y centrada */
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 10px 30px;
+    border-radius: 50px;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.nav-links { display: flex; list-style: none; gap: 20px; }
+.nav-links a { text-decoration: none; color: var(--texto); font-weight: bold; font-size: 0.9rem; }
+
+/* Hero Section */
+.hero {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.title-3d {
+    font-size: 5rem;
+    font-weight: 900;
+    color: #FFD700; /* Amarillo brillante */
+    text-transform: uppercase;
+    text-align: center;
+    /* Efecto de borde y relieve 3D */
+    text-shadow: 
+        -2px -2px 0 #B8860B,  
+         2px -2px 0 #B8860B,
+        -2px 2px 0 #B8860B,
+         2px 2px 0 #B8860B, 
+         0px 5px 0px #8B4513, /* Profundidad */
+         0px 8px 10px rgba(0,0,0,0.5);
+}
+
+.tagline {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #8B4513; /* Color café para el subtítulo */
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: -10px;
+}
+
+.product-grid {
+    display: grid; /* Esto los pone en línea */
+    grid-template-columns: repeat(2, 1fr); /* Crea las dos columnas */
+    gap: 20px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background: transparent;
+    text-align: center;
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Variar el tiempo de animacion para que no suban todos igual */
+.product-card:nth-child(even) { animation-delay: 2s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.product-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
+}
+
+.wa-btn {
+    display: block;
+    background: #2ecc71;
+    color: white;
+    text-decoration: none;
+    font-size: 0.7rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+    width: fit-content;
+    margin: 10px auto;
+    font-weight: bold;
+}
+
+/* Info y Mapa */
+.footer-info {
+    background: white;
+    margin-top: 50px;
+    padding: 30px 20px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    text-align: center;
+}
+
+.info-text p { font-size: 0.8rem; margin-bottom: 5px; }
+
+.map-box { margin: 20px auto; max-width: 90%; }
+
+.branding { margin-top: 20px; font-size: 0.7rem; color: #aaa; }
+
+/* Botón WA Titilando */
+.floating-wa {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); filter: drop-shadow(0 0 0px #25d366); }
+    70% { transform: scale(1.1); filter: drop-shadow(0 0 15px #25d366); }
+    100% { transform: scale(1); }
+}
